@@ -24,6 +24,7 @@ public class ExpertSystem {
         loadData();
         slope = getSlope();
         System.out.print(slope);
+        populateYHat(slope);
     }
     public static void loadData() throws FileNotFoundException, IOException{ 
         File file = new File("C:\\Users\\Algreg M. Mata\\Desktop\\data.txt");
@@ -75,6 +76,24 @@ public class ExpertSystem {
         }
         return retval;
     }
-
     
+    public static float getYHat(float x, float b, float slope){
+      float val = 0.0f;  
+      val = (slope * x ) + b;
+      return val;
+    }
+
+    public static float getB(float x, float y, float slope ){
+      float val = 0.0f;
+      val = (y - (slope*x)) / data.length;
+      return val;
+    }
+    
+    public static void populateYHat(float slope){
+      float b = getB(getSumX(),getSumY(),slope);
+      
+      for(int x=0; x<data.length;x++){
+        data[x][2] = getYHat(data[x][0],b,slope) ;
+      }
+    }
 }
