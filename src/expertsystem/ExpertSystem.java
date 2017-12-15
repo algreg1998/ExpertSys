@@ -27,7 +27,7 @@ public class ExpertSystem {
         populateYHat(slope);
     }
     public static void loadData() throws FileNotFoundException, IOException{ 
-        File file = new File("C:\\Users\\Algreg M. Mata\\Desktop\\data.txt");
+        File file = new File("data.txt");
         FileReader fileReader = new FileReader(file);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         
