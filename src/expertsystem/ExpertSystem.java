@@ -23,8 +23,14 @@ public class ExpertSystem {
     public static void main(String[] args) throws IOException {
         loadData();
         slope = getSlope();
-        System.out.print(slope);
+        System.out.println(slope);
         populateYHat(slope);
+        for(int x =0; x < data.length;x++){
+            System.out.print("x:" + data[x][0]);
+            System.out.print(" y:" +data[x][1]);
+            System.out.print(" y^:" +data[x][2]);
+            System.out.print('\n');
+        }
     }
     public static void loadData() throws FileNotFoundException, IOException{ 
         File file = new File("data.txt");
