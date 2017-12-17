@@ -16,7 +16,7 @@ public class ExpertSystem {
          4 - e^2
          ]
     */
-    static int n = 250;
+    static int n = 731;
     static float[][] data = new float[n][5];
     static float yIntercept,slope;
     
@@ -33,14 +33,14 @@ public class ExpertSystem {
         }
     }
     public static void loadData() throws FileNotFoundException, IOException{ 
-        File file = new File("data.txt");
+        File file = new File("day.csv");
         FileReader fileReader = new FileReader(file);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         
         String line;
         int x =0;
         while ((line = bufferedReader.readLine()) != null) {
-            String[] tokens = line.split("~");
+            String[] tokens = line.split(",");
             data[x][0]=Float.valueOf(tokens[0]);       
             data[x][1]=Float.valueOf(tokens[1]);       
             x++;
