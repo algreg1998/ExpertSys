@@ -10,14 +10,15 @@ public class ExpertSystem {
     /*
     data[x][
          0 - x,
-         1 - y,
-         2 - y hat,
-         3 - e,
-         4 - e^2
+         1 - x1,
+         2 - y,
+         3 - y hat,
+         4 - e,
+         5 - e^2
          ]
     */
     static int n = 731;
-    static float[][] data = new float[n][5];
+    static float[][] data = new float[n][6];
     static float yIntercept,slope;
     
     public static void main(String[] args) throws IOException {
@@ -37,10 +38,11 @@ public class ExpertSystem {
         }
         for(int x =0; x < data.length;x++){
             System.out.print("x:" + data[x][0]);
-            System.out.print(" y:" +data[x][1]);
-            System.out.print(" y^:" +data[x][2]);
-            System.out.print(" e:" +data[x][3]);
-            System.out.print(" e^2:" +data[x][4]);
+            System.out.print(" x1:" +data[x][1]);
+            System.out.print(" y:" +data[x][2]);
+            System.out.print(" y^:" +data[x][3]);
+            System.out.print(" e:" +data[x][4]);
+            System.out.print(" e^2:" +data[x][5]);
             System.out.print('\n');
         }
     }
@@ -55,6 +57,7 @@ public class ExpertSystem {
             String[] tokens = line.split(",");
             data[x][0]=Float.valueOf(tokens[0]);       
             data[x][1]=Float.valueOf(tokens[1]);       
+            data[x][2]=Float.valueOf(tokens[2]);       
             x++;
         }
         fileReader.close();
